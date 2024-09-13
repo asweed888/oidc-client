@@ -1,0 +1,9 @@
+[package]
+name = "oidc-client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.88"
+async-trait = "0.1.82"
+openidconnect = { version = "3.5.0", features = ["reqwest", "rustls-tls"] }
