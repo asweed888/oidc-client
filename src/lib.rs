@@ -8,4 +8,10 @@ use act::google::GoogleOidcClientAct;
 
 pub struct GoogleOidcClient;
 
+impl GoogleOidcClient {
+    pub fn new() -> Self {
+        Self{}
+    }
+}
+
 impl GoogleOidcClientAct for GoogleOidcClient {}
