@@ -3,14 +3,16 @@ use std::env;
 
 #[async_trait::async_trait]
 pub trait GoogleOidcClientAct {
-    async fn take(&self, server_addr: &str, callback_path: &str) -> anyhow::Result<CoreClient> {
-        let client_id = env::var("GOOGLE_CLIENT_ID")
-            .map(|client_id| ClientId::new(client_id))
-            .map_err(|e| e)?;
+    async fn take(
+        &self,
+        server_addr: String,
+        client_id: String,
+        client_secret: String,
+        callback_path: String
+    ) -> anyhow::Result<CoreClient> {
 
-        let client_secret = env::var("GOOGLE_CLIENT_SECRET")
-            .map(|client_secret| ClientSecret::new(client_secret))
-            .map_err(|e| e)?;
+        let client_id = ClientId::new(client_id);
+        let client_secret = ClientSecret::new(client_secret);
 
         let issuer_url = IssuerUrl::new("https://accounts.google.com".to_string())
             .map_err(|e| e)?;
