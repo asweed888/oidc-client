@@ -9,3 +9,13 @@ pub use openidconnect::{
     OAuth2TokenResponse,
 };
 pub use openidconnect::{AccessToken, Scope};
+
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct OIDCState {
+    pub pkce_verifier: PkceCodeVerifier,
+    pub csrf_token: CsrfToken,
+    pub nonce: Nonce
+}
+

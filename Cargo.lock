@@ -890,6 +890,7 @@ dependencies = [
  "anyhow",
  "async-trait",
  "openidconnect",
+ "serde",
 ]
 
 [[package]]
