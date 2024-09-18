@@ -7,3 +7,4 @@ edition = "2021"
 anyhow = "1.0.88"
 async-trait = "0.1.82"
 openidconnect = { version = "3.5.0", features = ["reqwest", "rustls-tls"] }
+serde = { version = "1.0.210", features = ["derive"] }
